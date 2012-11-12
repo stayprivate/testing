@@ -2,7 +2,7 @@
 # The build file for QNX Neutrino booting on a PC
 #
 [linker="ntox86-ld -T$QNX_TARGET/x86/lib/nto.link %(h!=0, -Ttext 0x%t%)%(d!=0, -Tdata 0x%d%) -o%o %i %[M -L%^i -uinit_%n -lmod_%n%]"]
-[virtual=x86,bios +compress] boot = {
+[virtual=x86,bios +compress=-1] boot = {
 	# Reserve 64k of video memory to handle multiple video cards 
 	startup-bios -s64k
 
